@@ -1,4 +1,4 @@
-# ⚗️ DataMining Suite — Mini-Projet FD1
+# DataMining TOOL   — Mini-Projet FD1
 
 Interface interactive de fouille de données développée avec **Streamlit**.  
 Pipeline complet : Prétraitement · Clustering · Classification supervisée.
@@ -13,7 +13,6 @@ mini-projet-fd1/
 ├── app.py              # Application principale Streamlit
 ├── requirements.txt    # Dépendances Python
 ├── README.md           # Ce fichier
-├── rapport.md          # Rapport du projet (à convertir en PDF)
 │
 └── data/               # (optionnel) Datasets de test
     └── exemple.csv
@@ -145,7 +144,6 @@ Tous les résultats sont visualisés en **2D via PCA** avec le score de Silhouet
 
 ---
 
-## 👤 Auteur
 
 BOUDA Mohamed
 
