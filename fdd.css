@@ -1,0 +1,792 @@
+/* ── Google Fonts ── */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+
+/* ── Root Variables ── */
+:root {
+  --primary: #6c63ff;
+  --primary-dk: #4b44cc;
+  --primary-lt: #8b7fff;
+  --accent: #00d4aa;
+  --accent-dk: #009370;
+  --accent-lt: #33e8c2;
+  --bg: #0d0f1a;
+  --surface: #151829;
+  --surface-2: #1e2235;
+  --surface-3: #26293b;
+  --border: #2a2d45;
+  --border-lt: #3a3e55;
+  --text: #e8eaf6;
+  --text-muted: #8b90b8;
+  --danger: #ff5f7e;
+  --warn: #ffb84d;
+  --success: #00d4aa;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 40px rgba(108, 99, 255, 0.25);
+}
+
+/* ── Animations ── */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 2px 10px rgba(108, 99, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.5);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ── Base ── */
+html,
+body,
+[class*="css"] {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* ── Main container ── */
+.main .block-container {
+  padding: 2rem 3rem 3rem;
+  max-width: 1400px;
+  background: var(--bg);
+  animation: slideInDown 0.5s ease-out;
+}
+
+/* ───────────────── SIDEBAR ───────────────── */
+
+/* Container principal */
+section[data-testid="stSidebar"] {
+  background: #1e2235 !important;
+  border-right: 2px solid #2a2d45;
+  animation: slideInRight 0.5s ease-out;
+}
+
+/* Padding interne */
+section[data-testid="stSidebar"] > div {
+  padding: 2rem 1.5rem !important;
+}
+
+/* Texte global */
+section[data-testid="stSidebar"] * {
+  color: #e8eaf6 !important;
+}
+
+/* ── TITRES ── */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+  color: #8b7fff !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #6c63ff;
+}
+
+/* ── FILE UPLOADER (DROPZONE) ── */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+  background: #26293b !important;
+  border: 2px dashed #6c63ff !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Hover uploader */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"]:hover {
+  background: #2e3248 !important;
+  border-color: #00d4aa !important;
+  box-shadow: 0 4px 20px rgba(0, 212, 170, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Texte uploader */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] * {
+  color: #e8eaf6 !important;
+}
+
+/* Bouton upload */
+section[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"] {
+  background: linear-gradient(135deg, #00d4aa, #00a8ff) !important;
+  color: white !important;
+  border-radius: 10px !important;
+  border: none !important;
+  font-weight: 600;
+}
+
+/* Hover bouton upload */
+section[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"]:hover {
+  background: linear-gradient(135deg, #00a8ff, #00d4aa) !important;
+  box-shadow: 0 4px 15px rgba(0, 168, 255, 0.3);
+}
+
+/* ── BOUTONS CLASSIQUES ── */
+section[data-testid="stSidebar"] .stButton > button {
+  background: linear-gradient(135deg, #ff6a00, #ff3d00) !important;
+  color: white !important;
+  border-radius: 10px !important;
+  border: none !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover boutons */
+section[data-testid="stSidebar"] .stButton > button:hover {
+  background: linear-gradient(135deg, #ff3d00, #ff6a00) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 61, 0, 0.3);
+}
+
+/* ── SELECT / INPUT ── */
+section[data-testid="stSidebar"] .stSelectbox > div > div,
+section[data-testid="stSidebar"] .stMultiSelect > div > div,
+section[data-testid="stSidebar"] .stTextInput > div > div > input {
+  background: #26293b !important;
+  border: 1px solid #2a2d45 !important;
+  border-radius: 8px !important;
+}
+
+/* Focus input */
+section[data-testid="stSidebar"] .stSelectbox > div > div:focus-within,
+section[data-testid="stSidebar"] .stTextInput > div > div > input:focus {
+  border-color: #00d4aa !important;
+  box-shadow: 0 0 10px rgba(0, 212, 170, 0.3);
+}
+
+/* ── FILE CHIP (fichier uploadé) ── */
+section[data-testid="stSidebar"] [data-testid="stFileChip"] {
+  background: #26293b !important;
+  border: 1px solid #2a2d45 !important;
+  border-radius: 10px !important;
+  padding: 8px 10px !important;
+  transition: all 0.3s ease;
+}
+
+/* Hover chip */
+section[data-testid="stSidebar"] [data-testid="stFileChip"]:hover {
+  border-color: #00d4aa !important;
+  box-shadow: 0 3px 10px rgba(0, 212, 170, 0.2);
+}
+
+/* Nom fichier */
+section[data-testid="stSidebar"] [data-testid="stFileChipName"] {
+  color: #e8eaf6 !important;
+  font-weight: 600;
+}
+
+/* Taille fichier */
+section[data-testid="stSidebar"] [data-testid="stFileChip"] small {
+  color: #8b90b8 !important;
+}
+
+/* Bouton delete */
+section[data-testid="stSidebar"]
+  [data-testid="stFileChipDeleteBtn"]
+  button:hover {
+  background: rgba(255, 95, 126, 0.2) !important;
+}
+
+/* ── DIVIDER ── */
+section[data-testid="stSidebar"] hr {
+  border-color: #2a2d45 !important;
+}
+/* ── Title ── */
+h1 {
+  font-family: "Space Mono", monospace !important;
+  font-size: 2rem !important;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.2rem !important;
+  animation: slideInDown 0.6s ease-out;
+}
+
+h2,
+h3,
+h4 {
+  font-family: "DM Sans", sans-serif !important;
+  color: var(--text) !important;
+  animation: slideUp 0.5s ease-out;
+}
+
+h2 {
+  font-size: 1.4rem !important;
+  font-weight: 700;
+}
+h3 {
+  font-size: 1.15rem !important;
+  font-weight: 600;
+  color: var(--text-muted) !important;
+}
+
+/* ── Tabs ── */
+.stTabs [data-baseweb="tab-list"] {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px;
+  gap: 4px;
+  animation: slideUp 0.5s ease-out;
+}
+
+.stTabs [data-baseweb="tab"] {
+  background: transparent;
+  color: var(--text-muted) !important;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+  color: var(--primary) !important;
+  background: var(--surface-3) !important;
+  transform: translateY(-2px);
+}
+
+.stTabs [aria-selected="true"] {
+  background: var(--primary) !important;
+  color: #fff !important;
+  box-shadow: var(--shadow-lg);
+  animation: glow 2s ease-in-out infinite;
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+  padding-top: 1.5rem;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ── Buttons ── */
+.stButton > button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dk));
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.4rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(108, 99, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.stButton > button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.stButton > button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.5);
+}
+
+.stButton > button:hover::before {
+  left: 100%;
+}
+
+.stButton > button:active {
+  transform: scale(0.98);
+}
+
+.stButton > button[kind="secondary"] {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text) !important;
+  box-shadow: none;
+}
+
+/* ── Metrics ── */
+[data-testid="metric-container"] {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideUp 0.5s ease-out;
+}
+
+[data-testid="metric-container"]:hover {
+  background: var(--surface-3);
+  border-color: var(--accent);
+  border-left-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 212, 170, 0.15);
+}
+
+[data-testid="metric-container"] [data-testid="stMetricLabel"] {
+  color: var(--text-muted) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[data-testid="metric-container"] [data-testid="stMetricValue"] {
+  color: var(--accent) !important;
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem !important;
+  font-weight: 700;
+}
+
+/* ── Inputs & selects ── */
+.stSelectbox > div > div,
+.stMultiSelect > div > div,
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stTextArea > div > div > textarea {
+  background: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  color: var(--text) !important;
+  transition: all 0.3s ease;
+}
+
+.stSelectbox > div > div:hover,
+.stMultiSelect > div > div:hover,
+.stTextInput > div > div > input:hover,
+.stNumberInput > div > div > input:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.2) !important;
+}
+
+.stSelectbox > div > div:focus-within,
+.stMultiSelect > div > div:focus-within,
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.3) !important;
+}
+
+.stSelectbox label,
+.stMultiSelect label,
+.stTextInput label,
+.stNumberInput label,
+.stRadio label,
+.stCheckbox label {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.stCheckbox:hover label {
+  color: var(--primary) !important;
+}
+
+/* ── Radio ── */
+.stRadio > div {
+  gap: 0.75rem;
+}
+
+/* ── Sliders ── */
+.stSlider > div > div > div > div {
+  background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
+}
+
+.stSlider > div > div > div:hover {
+  opacity: 0.9;
+}
+
+/* ── Alerts ── */
+.stSuccess {
+  background: rgba(0, 212, 170, 0.1) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: var(--radius) !important;
+  color: var(--accent) !important;
+  animation: slideUp 0.4s ease-out;
+}
+
+.stInfo {
+  background: rgba(108, 99, 255, 0.1) !important;
+  border: 1px solid var(--primary) !important;
+  border-radius: var(--radius) !important;
+  color: var(--text) !important;
+  animation: slideUp 0.4s ease-out;
+}
+
+.stWarning {
+  background: rgba(255, 184, 77, 0.1) !important;
+  border: 1px solid var(--warn) !important;
+  border-radius: var(--radius) !important;
+  color: var(--warn) !important;
+  animation: slideUp 0.4s ease-out;
+}
+
+.stError {
+  background: rgba(255, 95, 126, 0.1) !important;
+  border: 1px solid var(--danger) !important;
+  border-radius: var(--radius) !important;
+  color: var(--danger) !important;
+  animation: slideUp 0.4s ease-out;
+}
+
+/* ── DataFrames ── */
+.stDataFrame,
+[data-testid="stDataFrame"] {
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border) !important;
+  overflow: hidden;
+  animation: slideUp 0.5s ease-out;
+}
+
+.stDataFrame iframe {
+  background: var(--surface) !important;
+}
+
+/* ── Expander ── */
+.streamlit-expanderHeader {
+  background: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  color: var(--text) !important;
+  transition: all 0.3s ease;
+}
+
+.streamlit-expanderHeader:hover {
+  background: var(--surface-3) !important;
+  border-color: var(--primary) !important;
+}
+
+/* ── Divider ── */
+hr {
+  border-color: var(--border) !important;
+  margin: 1.5rem 0;
+  animation: slideInDown 0.4s ease-out;
+}
+
+/* ── Custom badges ── */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.badge-ok {
+  background: rgba(0, 212, 170, 0.15);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.badge-ok:hover {
+  background: rgba(0, 212, 170, 0.25);
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.3);
+}
+
+.badge-warn {
+  background: rgba(255, 184, 77, 0.15);
+  color: var(--warn);
+  border: 1px solid var(--warn);
+}
+
+.badge-warn:hover {
+  background: rgba(255, 184, 77, 0.25);
+  box-shadow: 0 0 12px rgba(255, 184, 77, 0.3);
+}
+
+.badge-bad {
+  background: rgba(255, 95, 126, 0.15);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.badge-bad:hover {
+  background: rgba(255, 95, 126, 0.25);
+  box-shadow: 0 0 12px rgba(255, 95, 126, 0.3);
+}
+
+/* ── Section card ── */
+.section-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideUp 0.5s ease-out;
+}
+
+.section-card:hover {
+  background: var(--surface-2);
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* ── Footer ── */
+footer {
+  visibility: hidden;
+}
+
+/* ── Matplotlib fix ── */
+.stPlotlyChart,
+.stPyplot {
+  border-radius: var(--radius);
+  overflow: hidden;
+  animation: slideUp 0.5s ease-out;
+}
+
+/* ── Smooth transitions ── */
+* {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+/* ── DROPZONE PRINCIPALE ── */
+[data-testid="stFileUploaderDropzone"] {
+  background: var(--surface-2) !important;
+  border: 2px dashed var(--primary) !important;
+  border-radius: 14px !important;
+  padding: 25px !important;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: var(--text) !important;
+}
+
+/* Hover */
+[data-testid="stFileUploaderDropzone"]:hover {
+  background: var(--surface-3) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ── TEXTE (Upload + CSV info) ── */
+[data-testid="stFileUploaderDropzone"] p,
+[data-testid="stFileUploaderDropzone"] span {
+  color: var(--text) !important;
+  font-weight: 500;
+}
+
+/* ── BOUTON UPLOAD ── */
+[data-testid="stBaseButton-secondary"] {
+  background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+  color: white !important;
+  border-radius: 10px !important;
+  border: none !important;
+  padding: 10px 18px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover bouton */
+[data-testid="stBaseButton-secondary"]:hover {
+  background: var(--accent) !important;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+}
+
+/* ── ICONE upload ── */
+[data-testid="stIconMaterial"] {
+  color: white !important;
+  font-size: 20px !important;
+}
+
+/* ── TEXTE "200MB per file • CSV" ── */
+[data-testid="stFileUploaderDropzoneInstructions"] {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+/* ── SUPPRIMER FOND BLANC INTERNE ── */
+.st-emotion-cache-nd5v17 {
+  background: transparent !important;
+}
+/* ── FILE CHIP (container) ── */
+[data-testid="stFileChip"] {
+  background: linear-gradient(
+    135deg,
+    var(--surface-2),
+    var(--surface-3)
+  ) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  padding: 8px 12px !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+[data-testid="stFileChip"]:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 4px 15px rgba(0, 212, 170, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ── NOM DU FICHIER ── */
+[data-testid="stFileChipName"] {
+  color: var(--text) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ── TAILLE (10.6KB) ── */
+[data-testid="stFileChip"] div:last-child {
+  color: var(--text-muted) !important;
+  font-size: 0.75rem;
+}
+
+/* ── ICONE FICHIER ── */
+[data-testid="stFileChip"] svg {
+  color: var(--primary) !important;
+  width: 18px;
+  height: 18px;
+}
+
+/* ── BOUTON DELETE (X) ── */
+[data-testid="stFileChipDeleteBtn"] button {
+  background: transparent !important;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+/* Hover delete */
+[data-testid="stFileChipDeleteBtn"] button:hover {
+  background: rgba(255, 95, 126, 0.2) !important;
+  transform: scale(1.1);
+}
+
+/* Icône delete */
+[data-testid="stFileChipDeleteBtn"] svg {
+  color: var(--danger) !important;
+  width: 16px;
+  height: 16px;
+}
+/* ── Expand / Collapse Sidebar Button (ALL cases) ── */
+
+/* Nouveau nom */
+button[data-testid="stExpandSidebarButton"] {
+  background: #1e2235 !important;
+  color: #e8eaf6 !important;
+  border: 1px solid #2a2d45 !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+}
+
+/* Ancien nom (fallback) */
+button[data-testid="collapsedControl"],
+button[data-testid="stSidebarCollapseButton"] {
+  background: #1e2235 !important;
+  color: #e8eaf6 !important;
+  border: 1px solid #2a2d45 !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+button[data-testid="stExpandSidebarButton"]:hover,
+button[data-testid="collapsedControl"]:hover,
+button[data-testid="stSidebarCollapseButton"]:hover {
+  background: #26293b !important;
+  border-color: #00d4aa !important;
+  color: #00d4aa !important;
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.3);
+}
+
+/* Icône */
+button[data-testid="stExpandSidebarButton"] svg,
+button[data-testid="collapsedControl"] svg,
+button[data-testid="stSidebarCollapseButton"] svg {
+  color: #e8eaf6 !important;
+  transition: all 0.3s ease;
+}
+
+/* Hover icône */
+button[data-testid="stExpandSidebarButton"]:hover svg,
+button[data-testid="collapsedControl"]:hover svg,
+button[data-testid="stSidebarCollapseButton"]:hover svg {
+  color: #00d4aa !important;
+}
+
+/* Click */
+button[data-testid="stExpandSidebarButton"]:active,
+button[data-testid="collapsedControl"]:active,
+button[data-testid="stSidebarCollapseButton"]:active {
+  transform: scale(0.95);
+}
+button[data-testid="stExpandSidebarButton"] {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+}
+[data-testid="stAppDeployButton"] {
+  display: none;
+}
